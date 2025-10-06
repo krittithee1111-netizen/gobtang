@@ -7,6 +7,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&display=swap" rel="stylesheet">
 
   <style>
+    
+   .heart-container{
+  position:relative;
+  display:inline-block;
+  margin-top:100px;      /* ขยับลงล่าง */
+  margin-bottom:10px;   /* 👈 เพิ่มระยะห่างระหว่างหัวใจกับแกลเลอรี */
+}
+
+.gallery{
+  text-align:center;    /* จัดตรงกลาง */
+  margin-top:20px;      /* หรือจะกำหนดตรงนี้แทนก็ได้ */
+}
+
+.gallery img{
+  width:200px;
+  height:auto;
+  margin:10px;
+  animation: floaty 6s ease-in-out infinite;
+}
+
+
     body{
       margin:0; height:100vh;
       display:flex; flex-direction:column;
@@ -76,19 +97,29 @@
   0%,100%{ transform:translateY(0) rotate(calc(var(--r,0) * 1deg)); }
   50%{ transform:translateY(-12px) rotate(0deg); }
 }
+/* เพิ่มสไตล์เลื่อนลง */
+.top-section {
+  margin-top: 1000px; /* 👈 ปรับค่าตามที่อยากให้เลื่อนลง */
+  text-align: center;
+}
+
 
   </style>
 </head>
 <body>
+  <!-- ครอบ h1 + heart-container ไว้ด้วยกัน -->
+  <div class="top-section">
+    <h1>Happy Anniversary💖</h1>
+
     <div class="heart-container">
-  <img src="images/ChatGPT Image 4 ต.ค. 2568 11_42_17.png" alt="Crystal Heart" class="crystal-heart">
-  <div class="heart-text">
-    <button onclick="openGift()">Open Gift</button>
+      <img src="images/ChatGPT Image 4 ต.ค. 2568 11_42_17.png" 
+           alt="Crystal Heart" 
+           class="crystal-heart">
+      <div class="heart-text">
+        <button onclick="openGift()">Open Gift</button>
+      </div>
+    </div>
   </div>
-</div>
-
-
-  <h1>สุขสันข์วันครบรอบนะที่รักกก 💖</h1>
 
   <!-- Gallery -->
   <div class="gallery">
@@ -102,4 +133,5 @@
     }
   </script>
 </body>
+
 </html>
