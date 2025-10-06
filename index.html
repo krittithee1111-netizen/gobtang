@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Happy Anniversary</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&display=swap" rel="stylesheet">
+
+  <style>
+    body{
+      margin:0; height:100vh;
+      display:flex; flex-direction:column;
+      justify-content:center; align-items:center;
+      font-family:'Baloo 2',sans-serif;
+      background:linear-gradient(270deg,#ffe3f3,#f5fbff,#fffdf3);
+      background-size:600% 600%;
+      animation: gradientMove 18s ease infinite;
+      overflow-x:hidden; position:relative;
+    }
+    @keyframes gradientMove{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    h1{
+      margin:20px 0;
+      font-size:clamp(36px,10vw,90px);
+      font-weight:800;
+      background:linear-gradient(90deg,#ff9ecf,#ffe68a,#b7f0d3,#aee3ff,#ff9ecf);
+      -webkit-background-clip:text;
+      background-clip:text; color:transparent;
+      text-shadow:0 3px 0 rgba(255,255,255,.65);
+      animation:glow 3s ease-in-out infinite;
+      text-align:center;
+    }
+    @keyframes glow{
+      0%,100%{filter:brightness(1) drop-shadow(0 0 8px rgba(255,158,207,.6))}
+      50%{filter:brightness(1.1) drop-shadow(0 0 14px rgba(255,158,207,.8))}
+    }
+
+    /* heart image with button centered */
+    .heart-container{
+      position:relative;
+      display:inline-block;
+    }
+    .crystal-heart{
+      max-width:240px;
+      animation:float 4s ease-in-out infinite;
+      display:block;
+    }
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-12px)}
+    }
+    .heart-text{
+      position:absolute;
+      top:50%; left:50%;
+      transform:translate(-50%,-50%);
+    }
+    .heart-text button{
+      padding:12px 22px;
+      border:none; border-radius:25px;
+      background:#ff9ecf; color:#fff;
+      font-size:18px; font-weight:bold;
+      cursor:pointer;
+      box-shadow:0 6px 16px rgba(255,158,207,.4);
+    }
+
+    /* Gallery scattered style */
+    .gallery{
+      display:flex; gap:20px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-top:40px;
+      max-width:1000px;
+    }
+    .gallery img{
+      width:200px; height:250px;
+      object-fit:cover;
+      border-radius:16px;
+      box-shadow:0 8px 20px rgba(0,0,0,.2);
+      transition:transform .3s;
+      /* กระจายเอียงนิด ๆ */
+      transform:rotate(calc(var(--r,0) * 1deg)) translateY(calc(var(--y,0) * 1px));
+    }
+    .gallery img:hover{transform:scale(1.05) rotate(0deg);}
+  </style>
+</head>
+<body>
+    <div class="heart-container">
+  <img src="images/ChatGPT Image 4 ต.ค. 2568 11_42_17.png" alt="Crystal Heart" class="crystal-heart">
+  <div class="heart-text">
+    <button onclick="openGift()">Open Gift</button>
+  </div>
+</div>
+
+
+  <h1>สุขสันข์วันครบรอบนะที่รักกก 💖</h1>
+
+  <!-- Gallery -->
+  <div class="gallery">
+    <img src="images/WIN_25681006_12_14_24_Pro-removebg-preview.png" style="--r:-5;--y:10" alt="Memory 1">
+    <img src="https://picsum.photos/seed/pic2/400/600" style="--r:3;--y:-8" alt="Memory 2">
+    <img src="https://picsum.photos/seed/pic3/400/600" style="--r:-8;--y:5" alt="Memory 3">
+    <img src="https://picsum.photos/seed/pic4/400/600" style="--r:6;--y:-12" alt="Memory 4">
+  </div>
+
+  <script>
+    function openGift(){
+      window.location.href = "menu.html"; // ไปหน้าเมนู
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Memories</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+</head>
+<body class="memories-page">
+
+  <!-- Layer พื้นหลัง -->
+  <div class="bg-clouds"></div>
+  <div class="hearts"></div>
+  <div class="sparkles"></div>
+
+  <a href="menu.html" class="back-btn">← Back</a>
+  <h2 class="page-title"></h2>
+
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/553585887_1168126812029212_6947874946949201028_n.jpg" alt="Memory 1"></div>
+      <div class="swiper-slide"><img src="images/558265422_743600035380893_3626124028170882831_n_.jpg" alt="Memory 2"></div>
+      <div class="swiper-slide"><img src="images/สกรีนช็อต 2025-09-24 172136.png" alt="Memory 3"></div>
+      <div class="swiper-slide"><img src="images/สกรีนช็อต 2025-10-02 232027.png" alt="Memory 4"></div>
+    </div>
+  </div>
+
+ 
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      effect: "cards",
+      grabCursor: true,
+      loop: true,
+    });
+
+    // หัวใจลอย
+    const hearts = document.querySelector('.hearts');
+    function createHeart(){
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 3 + Math.random() * 5 + "s";
+      hearts.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }
+    setInterval(createHeart, 700);
+
+    // ดาวประกาย
+    const sparkles = document.querySelector('.sparkles');
+    function createSparkle(){
+      const sp = document.createElement('div');
+      sp.className = 'sparkle';
+      sp.style.left = Math.random() * 100 + "vw";
+      sp.style.top = Math.random() * 100 + "vh";
+      sp.style.animationDuration = 2 + Math.random() * 3 + "s";
+      sparkles.appendChild(sp);
+      setTimeout(() => sp.remove(), 4000);
+    }
+    setInterval(createSparkle, 500);
+  </script>
+</body>
+</html>
