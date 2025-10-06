@@ -2,8 +2,8 @@ const grid = document.getElementById('grid');
 const winTxt = document.getElementById('winTxt');
 
 const sources = [
-  'images/553585887_1168126812029212_6947874946949201028_n.jpg','images/558265422_743600035380893_3626124028170882831_n_.jpg','images/mem3.jpg','images/mem4.jpg',
-  'images/mem5.jpg','images/mem6.jpg','images/mem7.jpg','images/mem8.jpg'
+  'images/3275.jpg','images/3278.jpg','images/3288.jpg','images/3305.jpg',
+  'images/3303.jpg','images/3316.jpg','images/00.jpg','images/11.jpg'
 ]; // ใช้ 8 ภาพ -> คู่ละ 2 = 16 ใบ
 
 let first=null, lock=false, matched=0;

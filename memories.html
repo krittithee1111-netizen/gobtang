@@ -3,32 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <title>Our Memories</title>
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+  <style>
+    body {
+      margin:0; 
+      font-family:sans-serif; 
+      background:#fdf9ff;
+      overflow:hidden;
+    }
+
+    .back-btn {
+      position:absolute; 
+      top:10px; 
+      left:10px; 
+      color:#fff; 
+      background:#ff6b81;
+      padding:6px 12px;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:bold;
+      z-index:100;
+    }
+
+    .page-title {
+      text-align:center;
+      margin-top:50px;
+      color:#333;
+    }
+
+    /* Swiper */
+    .swiper {
+      width:80%;
+      max-width:600px;
+      margin:60px auto;
+    }
+    .swiper-slide {
+      position:relative;
+    }
+    .swiper-slide img {
+      width:100%;
+      border-radius:16px;
+      display:block;
+    }
+    /* ข้อความบนรูป */
+    .caption {
+      position:absolute;
+      bottom:10px;
+      left:0;
+      width:100%;
+      text-align:center;
+      color:#fff;
+      font-weight:bold;
+      text-shadow:0 2px 6px rgba(0,0,0,0.7);
+    }
+
+    /* หัวใจลอย */
+    .hearts .heart {
+      position:fixed;
+      bottom:-20px;
+      width:20px; 
+      height:20px;
+      background:red;
+      transform:rotate(45deg);
+      animation: floatUp linear forwards;
+      opacity:0.8;
+      z-index:0;
+    }
+    .hearts .heart::before,
+    .hearts .heart::after {
+      content:"";
+      position:absolute;
+      width:20px; 
+      height:20px;
+      background:red;
+      border-radius:50%;
+    }
+    .hearts .heart::before { top:-10px; left:0; }
+    .hearts .heart::after { left:-10px; top:0; }
+
+    @keyframes floatUp {
+      0% { transform:translateY(0) rotate(45deg); opacity:1; }
+      100% { transform:translateY(-110vh) rotate(45deg); opacity:0; }
+    }
+
+    /* ดาวประกาย */
+    .sparkles .sparkle {
+      position:fixed;
+      width:4px; height:4px;
+      background:white;
+      border-radius:50%;
+      animation: twinkle linear forwards;
+      box-shadow:0 0 6px 3px white;
+      z-index:0;
+    }
+    @keyframes twinkle {
+      0% {opacity:1; transform:scale(1);}
+      50% {opacity:0.3; transform:scale(1.8);}
+      100% {opacity:0; transform:scale(0);}
+    }
+  </style>
 </head>
 <body class="memories-page">
 
   <!-- Layer พื้นหลัง -->
-  <div class="bg-clouds"></div>
   <div class="hearts"></div>
   <div class="sparkles"></div>
 
   <a href="menu.html" class="back-btn">← Back</a>
-  <h2 class="page-title"></h2>
+  <h2 class="page-title">Our Sweet Memories</h2>
 
-  <!-- Swiper -->
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="images/553585887_1168126812029212_6947874946949201028_n.jpg" alt="Memory 1"></div>
-      <div class="swiper-slide"><img src="images/558265422_743600035380893_3626124028170882831_n_.jpg" alt="Memory 2"></div>
-      <div class="swiper-slide"><img src="images/สกรีนช็อต 2025-09-24 172136.png" alt="Memory 3"></div>
-      <div class="swiper-slide"><img src="images/สกรีนช็อต 2025-10-02 232027.png" alt="Memory 4"></div>
+ <div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="images/03.jpg" alt="Memory 1">
+      <div class="caption">💕</div>
+    </div>
+    <div class="swiper-slide">
+      <img src="images/04.jpg" alt="Memory 2">
+      <div class="caption">😍</div>
+    </div>
+    <div class="swiper-slide">
+      <img src="images/05.jpg" alt="Memory 3">
+      <div class="caption">🎉</div>
+    </div>
+    <div class="swiper-slide">
+      <img src="images/06.jpg" alt="Memory 4">
+      <div class="caption">✨</div>
+    </div>
+    <div class="swiper-slide">
+      <img src="images/02.jpg" alt="Memory 5">
+      <div class="caption">✨</div>
     </div>
   </div>
+</div>
 
- 
 
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
@@ -45,7 +154,7 @@
       const heart = document.createElement('div');
       heart.className = 'heart';
       heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = 3 + Math.random() * 5 + "s";
+      heart.style.animationDuration = (3 + Math.random() * 5) + "s";
       hearts.appendChild(heart);
       setTimeout(() => heart.remove(), 8000);
     }
@@ -58,7 +167,7 @@
       sp.className = 'sparkle';
       sp.style.left = Math.random() * 100 + "vw";
       sp.style.top = Math.random() * 100 + "vh";
-      sp.style.animationDuration = 2 + Math.random() * 3 + "s";
+      sp.style.animationDuration = (2 + Math.random() * 3) + "s";
       sparkles.appendChild(sp);
       setTimeout(() => sp.remove(), 4000);
     }

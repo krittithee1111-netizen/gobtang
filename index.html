@@ -68,23 +68,15 @@
     }
 
     /* Gallery scattered style */
-    .gallery{
-      display:flex; gap:20px;
-      flex-wrap:wrap;
-      justify-content:center;
-      margin-top:40px;
-      max-width:1000px;
-    }
-    .gallery img{
-      width:200px; height:250px;
-      object-fit:cover;
-      border-radius:16px;
-      box-shadow:0 8px 20px rgba(0,0,0,.2);
-      transition:transform .3s;
-      /* กระจายเอียงนิด ๆ */
-      transform:rotate(calc(var(--r,0) * 1deg)) translateY(calc(var(--y,0) * 1px));
-    }
-    .gallery img:hover{transform:scale(1.05) rotate(0deg);}
+   .gallery img{
+  animation: floaty 6s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0%,100%{ transform:translateY(0) rotate(calc(var(--r,0) * 1deg)); }
+  50%{ transform:translateY(-12px) rotate(0deg); }
+}
+
   </style>
 </head>
 <body>
@@ -101,9 +93,7 @@
   <!-- Gallery -->
   <div class="gallery">
     <img src="images/WIN_25681006_12_14_24_Pro-removebg-preview.png" style="--r:-5;--y:10" alt="Memory 1">
-    <img src="https://picsum.photos/seed/pic2/400/600" style="--r:3;--y:-8" alt="Memory 2">
-    <img src="https://picsum.photos/seed/pic3/400/600" style="--r:-8;--y:5" alt="Memory 3">
-    <img src="https://picsum.photos/seed/pic4/400/600" style="--r:6;--y:-12" alt="Memory 4">
+    <img src="images/LINE_ALBUM_3102568_BE_251006_14-removebg-preview.png" style="--r:3;--y:-8" alt="Memory 2">
   </div>
 
   <script>
