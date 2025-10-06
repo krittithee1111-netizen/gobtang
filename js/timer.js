@@ -1,5 +1,5 @@
 /***** กำหนดวันเริ่มคบกัน (YYYY-MM-DD) *****/
-const START_DATE = '2025-9-07'; // แก้เป็นของคุณ
+const START_DATE = 'oct 07, 2025'; // แก้เป็นของคุณ
 
 const $counter = document.getElementById('counter');
 
